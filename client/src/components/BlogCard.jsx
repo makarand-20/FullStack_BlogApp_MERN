@@ -25,7 +25,7 @@ export default function BlogCard(props){
   
   const handleDelete = async () => {
     try {
-      const { data } = await axios.delete(`https://fullstackblogapp-svnd.onrender.com/api/blogs/deleteblog/${id}`);
+      const { data } = await axios.delete(`https://blog-app-server-nine.vercel.app/api/blogs/deleteblog/${id}`);
       if (data) {
         toast.success("Blog Deleted");
         window.location.reload();
