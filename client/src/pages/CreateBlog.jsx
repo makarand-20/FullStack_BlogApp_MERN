@@ -24,7 +24,7 @@ const CreateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("https://fullstackblogapp-svnd.onrender.com/api/blogs/createblog", {
+      const { data } = await axios.post("https://blog-app-server-nine.vercel.app/api/blogs/createblog", {
         title: inputs.title,
         body: inputs.description,
         image: inputs.image,
