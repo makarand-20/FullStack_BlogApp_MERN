@@ -8,7 +8,7 @@ const BlogsPage = () => {
   //get blogs
   const getAllBlogs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5001/api/blogs/getall");
+      const { data } = await axios.get("https://fullstackblogapp-svnd.onrender.com/api/blogs/getall");
       if (data) {
         setBlogs(data.blogs); 
       }
