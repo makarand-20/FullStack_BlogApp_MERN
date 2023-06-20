@@ -12,7 +12,7 @@ const BlogDetails = () => {
   // get blog details
   const getBlogDetail = async () => {
     try {
-      const { data } = await axios.get(`https://fullstackblogapp-svnd.onrender.com/api/blogs/${id}`);
+      const { data } = await axios.get(`https://blog-app-server-nine.vercel.app/api/blogs/${id}`);
       if (data) {
         setBlog(data);
         setInputs({
@@ -41,7 +41,7 @@ const BlogDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(`https://fullstackblogapp-svnd.onrender.com/api/blogs/updateblog/${id}`, {
+      const { data } = await axios.put(`https://blog-app-server-nine.vercel.app/api/blogs/updateblog/${id}`, {
         title: inputs.title,
         body: inputs.body,
         image: inputs.image,
