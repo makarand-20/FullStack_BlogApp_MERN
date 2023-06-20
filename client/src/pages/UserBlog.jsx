@@ -10,7 +10,7 @@ const UserBlog = () => {
   const getUserBlogs = async () => {
     try {
       const id = localStorage.getItem("userId");
-      const { data } = await axios.get(`http://localhost:5001/api/blogs/userblog/${id}`);
+      const { data } = await axios.get(`https://fullstackblogapp-svnd.onrender.com/api/blogs/userblog/${id}`);
       if (data) {
         setBlogs(data.blogs);
         BlogCountToShow = data.BlogCount;
