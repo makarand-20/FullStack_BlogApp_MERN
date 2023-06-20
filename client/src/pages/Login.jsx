@@ -4,7 +4,8 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../redux/store";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,7 +35,16 @@ const Login = () => {
         localStorage.setItem("userId", data?.user.id);
         dispatch(authActions.login());
         //create a toast message
-        toast.success("User login Successfully");
+        toast.success('Login Successful!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         navigate("/");
       }
     } catch (error) {

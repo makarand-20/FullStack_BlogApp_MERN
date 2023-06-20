@@ -2,7 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CreateBlog = () => {
   const id = localStorage.getItem("userId");
@@ -30,7 +31,16 @@ const CreateBlog = () => {
         userId: id,
       });
       if (data) {
-        toast.success("Blog Created");
+        toast.success('👏 Post Created Successfully!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         navigate("/userblog");
       }
     } catch (error) {

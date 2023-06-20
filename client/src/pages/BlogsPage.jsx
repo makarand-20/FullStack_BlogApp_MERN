@@ -31,7 +31,7 @@ const BlogsPage = () => {
           description={blog.body}
           image={blog.image}
           username={blog.userId.username}
-          time= {moment(blog.createdAt).format("MMM Do YY")}
+          time= {moment(blog.createdAt).format("MMM Do YY, h:mm a")}
           />
         ))}
     </div>

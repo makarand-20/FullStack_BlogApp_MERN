@@ -7,17 +7,27 @@ import Register from './pages/Register'
 import UserBlog from './pages/UserBlog'
 import CreateBlog from './pages/CreateBlog'
 import BlogDetails from './pages/BlogDetails'
-import { Toaster } from 'react-hot-toast'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
   return (
     <>
       <Header/>
-      <Toaster
+      <ToastContainer
         position="top-right"
-        reverseOrder={false}
-      />
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
       <Routes>
         <Route path='/' element={<BlogsPage/>}/>
         <Route path='/blogs' element={<BlogsPage/>}/>

@@ -97,7 +97,7 @@ const userblog = async (req, res) => {
     const {userId} = req.params;
 
     //get user blog
-    const blogs = await Blog.find({userId}).populate('userId').sort({createdAt: -1}).select('-__v -createdAt -updatedAt');
+    const blogs = await Blog.find({userId}).populate('userId').sort({createdAt: -1});
 
     //return response
     res.status(200).json({

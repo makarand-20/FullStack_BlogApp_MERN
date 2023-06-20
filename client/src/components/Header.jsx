@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { authActions } from '../redux/store'
 import { useNavigate } from 'react-router-dom'
-import toast from 'react-hot-toast'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Header = () => {
   // global state
@@ -21,7 +22,16 @@ const Header = () => {
     try {
       localStorage.removeItem('userId')
       dispatch(authActions.logout())
-      toast.success('Logout Successfully')
+      toast.success('Logout Successfully!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       navigate('/login')
     } catch (error) {
       console.log(error)

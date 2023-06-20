@@ -10,7 +10,6 @@ const UserBlog = () => {
   const getUserBlogs = async () => {
     try {
       const id = localStorage.getItem("userId");
-      console.log(id);
       const { data } = await axios.get(`http://localhost:5001/api/blogs/userblog/${id}`);
       if (data) {
         setBlogs(data.blogs);
@@ -38,7 +37,7 @@ const UserBlog = () => {
           description={blog.body}
           image={blog.image}
           username={blog.userId.username}
-          time= {moment(blog.createdAt).format("MMM Do YY")}
+          time= {moment(blog.createdAt).format("MMM Do YY, h:mm a")}
           />
         )
         )) : (
