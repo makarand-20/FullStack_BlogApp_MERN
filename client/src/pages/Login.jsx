@@ -27,7 +27,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("https://fullstackblogapp-svnd.onrender.com/api/users/login/", {
+      const { data } = await axios.post("https://blog-app-server-nine.vercel.app/api/users/login/", {
         email: inputs.email,
         password: inputs.password,
       });
