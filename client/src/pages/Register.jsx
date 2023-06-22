@@ -26,7 +26,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const emailRegex = /^[A-Za-z0-9._%+-]+@viit\.ac\.in$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(input.email)) {
         alert("Invalid email address");
         return;
       }
