@@ -25,8 +25,8 @@ const Register = () => {
   //form handle
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const emailRegex = /^[A-Za-z0-9._%+-]+@viit\.ac\.in$/;
-    if (!emailRegex.test(inputs.email)) {
+    const {email} = inputs;
+    if (!emailRegex.test(email)) {
       toast.error('bsdk clg ka email dal Only...', {
         position: "top-center",
         autoClose: 3000,
