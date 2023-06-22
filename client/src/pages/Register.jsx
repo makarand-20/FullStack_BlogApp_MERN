@@ -5,6 +5,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const email_Regex = /^[A-Za-z0-9._%+-]+@viit\.ac\.in$/;
+
 const Register = () => {
   const navigate = useNavigate();
   //state
@@ -25,21 +27,22 @@ const Register = () => {
   //form handle
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const {email} = inputs;
-    if (!emailRegex.test(email)) {
-      toast.error('bsdk clg ka email dal Only...', {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-      return;
-    }
     try {
+      const {email} = inputs;
+      console.log(email);
+      if (!emailRegex.test(email)) {
+        toast.error('bsdk clg ka email dal Only...', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        return;
+      } 
       const { data } = await axios.post("https://blog-app-server-nine.vercel.app/api/users/register/", {
         username: inputs.name,
         email: inputs.email,
