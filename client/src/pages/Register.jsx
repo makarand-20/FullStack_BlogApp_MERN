@@ -28,9 +28,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const {email} = inputs;
-      console.log(email);
-      if (!emailRegex.test(email)) {
+      const emaill = inputs.email;
+      console.log(emaill);
+      if (!emailRegex.test(emaill)) {
         toast.error('bsdk clg ka email dal Only...', {
           position: "top-center",
           autoClose: 3000,
