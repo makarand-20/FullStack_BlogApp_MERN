@@ -26,10 +26,19 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const emailRegex = /^[A-Za-z0-9._%+-]+@viit\.ac\.in$/;
-    if (!emailRegex.test(email)) {
-        alert("Invalid email address");
-        return;
-      }
+    if (!emailRegex.test(inputs.email)) {
+      toast.error('bsdk clg ka email dal Only...', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      return;
+    }
     try {
       const { data } = await axios.post("https://blog-app-server-nine.vercel.app/api/users/register/", {
         username: inputs.name,
