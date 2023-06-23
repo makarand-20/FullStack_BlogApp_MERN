@@ -38,10 +38,10 @@ export default function BlogCard(props){
   return (
     <Card
       sx={{
-        width: "30%",
+        width: "500px",
         margin: "auto",
-        mt: 2,
-        padding: 2,
+        marginTop: "20px",
+        padding: "10px",
         boxShadow: "5px 5px 10px #ccc",
         ":hover:": {
           boxShadow: "10px 10px 20px #ccc",
