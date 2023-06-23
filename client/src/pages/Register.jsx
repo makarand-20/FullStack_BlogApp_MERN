@@ -5,8 +5,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const email_Regex = /^[A-Za-z0-9._%+-]+@viit\.ac\.in$/;
-
 const Register = () => {
   const navigate = useNavigate();
   //state
@@ -28,10 +26,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const emaill = inputs.email;
-      console.log(emaill);
-      if (!emailRegex.test(emaill)) {
-        toast.error('bsdk clg ka email dal Only...', {
+      //create a code for getting access of the email id
+      const email = inputs.email.split("@");
+      if (email[1] !== "viit.ac.in") {
+        return toast.error("⚠️ Please use college email id!", {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
@@ -39,10 +37,9 @@ const Register = () => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark",
+          theme: "light",
         });
-        return;
-      } 
+      }
       const { data } = await axios.post("https://blog-app-server-nine.vercel.app/api/users/register/", {
         username: inputs.name,
         email: inputs.email,
