@@ -38,7 +38,7 @@ export default function BlogCard(props){
   return (
     <Card
       sx={{
-        width: "40%",
+        width: "30%",
         margin: "auto",
         mt: 2,
         padding: 2,
